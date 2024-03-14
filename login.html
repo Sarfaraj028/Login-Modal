@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login modal</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <button type="button">
+        Login
+    </button>
+    <div class="overlay">
+
+    </div>
+    <div class="loginform" id="demo">
+        <span>&times;</span>
+        <form action="">
+            <fieldset>
+                <label for="uname">Email: </label>
+                <input type="text" name="uname" id="username">
+            </fieldset>
+            <fieldset>
+                <label for="passpword">Password: </label>
+                <input type="password" name="pass" id="useepass">
+            </fieldset>
+            <button type="submit">
+                LOGIN
+            </button>
+
+        </form>
+    </div>
+    <script>
+        function displaymodal() {
+            document.getElementById("demo").style.top = '50%';
+            document.querySelector(".overlay").classList.add("showoverlay")
+            document.querySelectorAll("button")[0].style.display = "none"
+        }
+        var btn = document.querySelectorAll('button')[0].addEventListener("click", displaymodal);
+
+        // closing modal code 
+        function closemodal() {
+            document.getElementById("demo").style.top = '-50%';
+            document.querySelector(".overlay").classList.remove("showoverlay")
+            document.querySelectorAll("button")[0].style.display = "block"
+        }
+        var close = document.querySelector('span').addEventListener("click", closemodal);
+    </script>
+</body>
+
+</html>
